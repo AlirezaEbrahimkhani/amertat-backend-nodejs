@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const colors = require("colors");
 dotenv.config({ path: "./config/config.env" });
+require("./config/db");
 
 // init application
 const app = express();
