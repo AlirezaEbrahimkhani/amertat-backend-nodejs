@@ -2,6 +2,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const fileUpload = require("express-fileupload");
 const colors = require("colors");
 dotenv.config({ path: "./config/config.env" });
 require("./config/db");
@@ -11,6 +12,9 @@ const app = express();
 
 //body Parser
 app.use(express.json());
+
+// init file upload
+app.use(fileUpload());
 
 // implement req logger for development mood
 if (process.env.NODE_ENV === "development") {
