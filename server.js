@@ -7,6 +7,9 @@ const colors = require("colors");
 dotenv.config({ path: "./config/config.env" });
 require("./config/db");
 
+//import routes
+const accomodation = require("./routes/accomodation-service");
+
 // init application
 const app = express();
 
@@ -20,6 +23,9 @@ app.use(fileUpload());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+//mount routes
+app.use("/accomodation", accomodation);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
