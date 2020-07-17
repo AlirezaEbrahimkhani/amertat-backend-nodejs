@@ -12,9 +12,10 @@ client
   .then(() => {
     console.log(`Connected to database Successfully ... !`.cyan.underline.bold);
   })
-  .catch(() => {
+  .catch((err) => {
     console.log(
-      `We have some problem to conncet to database ... !`.red.underline.bold
+      `We have some problem to conncet to database ... ! ${err}`.red.underline
+        .bold
     );
   });
 
