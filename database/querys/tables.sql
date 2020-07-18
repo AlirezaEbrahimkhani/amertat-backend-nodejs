@@ -15,3 +15,11 @@ create table tbl_liposuction (
     active boolean not null,
     primary key (id)
 );
+
+create table tbl_hairTransplant (
+    id serial not null unique,
+    learnMore text not null,
+    explanation text not null,
+    active boolean not null,
+    primary key (id)
+);
