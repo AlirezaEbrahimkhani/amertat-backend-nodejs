@@ -1,6 +1,4 @@
 const asyncHandler = require("../middlewares/async");
-const fs = require("fs");
-const path = require("path");
 const Logger = require("../utils/logger");
 const client = require("../config/db");
 
@@ -21,7 +19,7 @@ exports.getAccomodations = asyncHandler(async (req, res, next) => {
 });
 
 // @desc        Get Single accomodation
-// @route       GET /api/accomodation
+// @route       GET /api/accomodation/:id
 // @access      Public
 exports.getAccomodation = asyncHandler(async (req, res, next) => {
   client.query(
@@ -84,10 +82,10 @@ exports.createAccomodation = asyncHandler(async (req, res, next) => {
   );
 });
 
-// @desc        Update all accomodation
-// @route       PUT /api/accomodation
+// @desc        Update a accomodation
+// @route       PUT /api/accomodation/:id
 // @access      Private
 
-// @desc        delete accomodation
-// @route       Delete /api/accomodation
+// @desc        delete a accomodation
+// @route       Delete /api/accomodation/:id
 // @access      Private
