@@ -25,7 +25,7 @@ exports.getAccomodations = asyncHandler(async (req, res, next) => {
   });
 });
 
-// @desc        Get active accomodation
+// @desc        Get Single accomodation
 // @route       GET /api/accomodation
 // @access      Public
 exports.getAccomodation = asyncHandler(async (req, res, next) => {
@@ -43,6 +43,29 @@ exports.getAccomodation = asyncHandler(async (req, res, next) => {
         fs.appendFileSync(
           `${path.dirname(require.main.filename)}/log/database-log.txt`,
           "Error while selecting Single Accomodation ... !\n"
+        );
+      }
+    }
+  );
+});
+
+// @desc        Get Avtive accomodation
+// @route       GET /api/accomodation/active
+// @access      Public
+exports.getActiveAccomodation = asyncHandler(async (req, res, next) => {
+  client.query(
+    "select * from tbl_accomodationservice where active = true",
+    (err, result) => {
+      if (!err) {
+        res.status(200).json({ success: true, data: result.rows });
+        fs.appendFileSync(
+          `${path.dirname(require.main.filename)}/log/database-log.txt`,
+          "Select Active Accomodation ... !\n"
+        );
+      } else {
+        fs.appendFileSync(
+          `${path.dirname(require.main.filename)}/log/database-log.txt`,
+          "Error while selecting Active Accomodation ... !\n"
         );
       }
     }
