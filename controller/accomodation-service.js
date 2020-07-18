@@ -1,6 +1,7 @@
 const asyncHandler = require("../middlewares/async");
 const fs = require("fs");
 const path = require("path");
+const Logger = require("../utils/logger");
 const client = require("../config/db");
 
 // @desc        Get all accomodation
@@ -12,15 +13,9 @@ exports.getAccomodations = asyncHandler(async (req, res, next) => {
       res
         .status(200)
         .json({ success: true, count: result.rowCount, data: result.rows });
-      fs.appendFileSync(
-        `${path.dirname(require.main.filename)}/log/database-log.txt`,
-        "Select all Accomodations ... !\n"
-      );
+      new Logger("Select all Accomodations ... !");
     } else {
-      fs.appendFileSync(
-        `${path.dirname(require.main.filename)}/log/database-log.txt`,
-        "Error while selecting all Accomodations ... !\n"
-      );
+      new Logger("Error while selecting all Accomodations ... !");
     }
   });
 });
@@ -35,15 +30,9 @@ exports.getAccomodation = asyncHandler(async (req, res, next) => {
     (err, result) => {
       if (!err) {
         res.status(200).json({ success: true, data: result.rows });
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "Select Single Accomodation ... !\n"
-        );
+        new Logger("Select Single Accomodation ... !");
       } else {
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "Error while selecting Single Accomodation ... !\n"
-        );
+        new Logger("Error while selecting Single Accomodation ... !");
       }
     }
   );
@@ -58,15 +47,9 @@ exports.getActiveAccomodation = asyncHandler(async (req, res, next) => {
     (err, result) => {
       if (!err) {
         res.status(200).json({ success: true, data: result.rows });
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "Select Active Accomodation ... !\n"
-        );
+        new Logger("Select Active Accomodation ... !");
       } else {
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "Error while selecting Active Accomodation ... !\n"
-        );
+        new Logger("Error while selecting Active Accomodation ... !");
       }
     }
   );
@@ -80,10 +63,7 @@ exports.createAccomodation = asyncHandler(async (req, res, next) => {
     "update tbl_accomodationservice set active = false where active = true",
     (err, result) => {
       if (!err) {
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "update accomodations ... !\n"
-        );
+        new Logger("update accomodations ... !");
         const { explanation, learnmore, otherservice, guides } = req.body;
         client.query(
           "insert into tbl_accomodationservice (explanation,learnmore,otherservice,guides,active) values ($1 , $2 , $3, $4 , $5)",
@@ -91,23 +71,14 @@ exports.createAccomodation = asyncHandler(async (req, res, next) => {
           (err, result) => {
             if (!err) {
               res.status(201).json({ success: true, data: {} });
-              fs.appendFileSync(
-                `${path.dirname(require.main.filename)}/log/database-log.txt`,
-                "Create Single Accomodation ... !\n"
-              );
+              new Logger("Create Single Accomodation ... !");
             } else {
-              fs.appendFileSync(
-                `${path.dirname(require.main.filename)}/log/database-log.txt`,
-                "Error while Create Single Accomodation ... !\n"
-              );
+              new Logger("Error while Create Single Accomodation ... !");
             }
           }
         );
       } else {
-        fs.appendFileSync(
-          `${path.dirname(require.main.filename)}/log/database-log.txt`,
-          "Error while update Accomodations ... !\n"
-        );
+        new Logger("Error while update Accomodations ... !");
       }
     }
   );
