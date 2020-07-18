@@ -9,6 +9,8 @@ require("./config/db");
 
 //import routes
 const accomodation = require("./routes/accomodation-service");
+const liposuction = require("./routes/liposuction");
+const hairTranspalent = require("./routes/hair-transpalent");
 
 // init application
 const app = express();
@@ -50,7 +52,9 @@ if (process.env.NODE_ENV === "development") {
 }
 
 //mount routes
-app.use("/accomodation", accomodation);
+app.use("/api/accomodation", accomodation);
+app.use("/api/liposuction", liposuction);
+app.use("/api/hair-transplant", hairTranspalent);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
