@@ -7,3 +7,11 @@ create table tbl_accomodationService (
     active boolean not null,
     primary key (id)
 );
+
+create table tbl_liposuction (
+    id serial not null unique,
+    learnMore text not null,
+    explanation text not null,
+    active boolean not null,
+    primary key (id)
+);

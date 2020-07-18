@@ -29,3 +29,11 @@ values
         'In the current environment of online channels, people book their rooms through hotel booking-engines with real-time room rates. Congrex Switzerland has integrated a worldwide leading online booking engine into its own accommodation sales system. Therefore, the participants benefit from best available room rates, up to date hotel descriptions and can access the latest pictures of the hotels.',
         'Activities involved in the management of accommodation services provided either directly or indirectly by the university. Activities include operation and maintenance of premises and management of student residents within the studActivities involved in the management of accommodation services provided either directly or indirectly by the university. Activities include operation and maintenance of premises and management of student residents within the stud'
     );
+
+insert into
+    tbl_liposuction (learnmore, explanation)
+values
+    (
+        'Liposuction, or simply lipo, is a type of fat removal procedure used in plastic surgery. Evidence does not support an effect on weight beyond a couple of months and it does not appear to affect obesity related problems. In the United States it is the most commonly done cosmetic surgery.Liposuction, or simply lipo, is a type of fat removal procedure used in plastic surgery',
+        'Liposuction is a surgical procedure that uses a suction technique to remove fat from specific areas of the body, such as the abdomen, hips, thighs, buttocks, arms or neck. Liposuction also shapes (contours) these areas. Other names for liposuction include lipoplasty and body contouring.Liposuction is not typically considered an overall weight-loss method or a weight-loss alternative. If you are overweight, you are likely to lose more weight through diet and exercise or through bariatric procedures — such as gastric bypass surgery — than you would with liposuction.You may be a candidate for liposuction if you have too much body fat in specific spots but otherwise have a stable body weight.'
+    );
