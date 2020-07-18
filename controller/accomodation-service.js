@@ -68,7 +68,7 @@ exports.createAccomodation = asyncHandler(async (req, res, next) => {
           [explanation, learnmore, otherservice, guides, true],
           (err, result) => {
             if (!err) {
-              res.status(201).json({ success: true, data: {} });
+              res.status(201).json({ success: true, data: [] });
               new Logger("Create Single Accomodation ... !");
             } else {
               new Logger("Error while Create Single Accomodation ... !");
@@ -85,6 +85,21 @@ exports.createAccomodation = asyncHandler(async (req, res, next) => {
 // @desc        Update a accomodation
 // @route       PUT /api/accomodation/:id
 // @access      Private
+exports.updateAccomodation = asyncHandler(async (req, res, next) => {
+  const { explanation, learnmore, otherservice, guides, active } = req.body;
+  client.query(
+    "update tbl_accomodationservice set explanation = $1 , learnmore = $2 , otherservice = $3 , guides = $4 , active = $5 where id = $6",
+    [explanation, learnmore, otherservice, guides, active, req.params.id],
+    (err, result) => {
+      if (!err) {
+        res.status(200).json({ success: true, data: [] });
+        new Logger("Update a Accomodation ... !");
+      } else {
+        new Logger("Error while updating a Accomodation ... !");
+      }
+    }
+  );
+});
 
 // @desc        delete a accomodation
 // @route       Delete /api/accomodation/:id
