@@ -104,3 +104,17 @@ exports.updateAccomodation = asyncHandler(async (req, res, next) => {
 // @desc        delete a accomodation
 // @route       Delete /api/accomodation/:id
 // @access      Private
+exports.deleteAccomodation = asyncHandler(async (req, res, next) => {
+  client.query(
+    "delete from tbl_accomodationservice where id = $1",
+    [req.params.id],
+    (err, result) => {
+      if (!err) {
+        res.status(200).json({ success: true, data: [] });
+        new Logger("Delete a Accomodation ... !");
+      } else {
+        new Logger("Error while deleting a Accomodation ... !");
+      }
+    }
+  );
+});

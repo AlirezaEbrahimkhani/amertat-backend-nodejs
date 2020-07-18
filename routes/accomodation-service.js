@@ -6,12 +6,17 @@ const {
   getActiveAccomodation,
   createAccomodation,
   updateAccomodation,
+  deleteAccomodation,
 } = require("../controller/accomodation-service");
 
 router.route("/active").get(getActiveAccomodation);
 
 router.route("/").get(getAccomodations).post(createAccomodation);
 
-router.route("/:id").get(getAccomodation).put(updateAccomodation);
+router
+  .route("/:id")
+  .get(getAccomodation)
+  .put(updateAccomodation)
+  .delete(deleteAccomodation);
 
 module.exports = router;
