@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const fileUpload = require("express-fileupload");
+const path = require("path");
 const colors = require("colors");
 dotenv.config({ path: "./config/config.env" });
 require("./config/db");
@@ -51,6 +52,9 @@ app.use(fileUpload());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+// set static folder
+app.use(express.static(path.join(__dirname, "/public")));
 
 //mount routes
 app.use("/api/upload", imageUploading);
