@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const fileUpload = require("express-fileupload");
+const path = require("path");
 const colors = require("colors");
 dotenv.config({ path: "./config/config.env" });
 require("./config/db");
@@ -11,6 +12,7 @@ require("./config/db");
 const accomodation = require("./routes/accomodation-service");
 const liposuction = require("./routes/liposuction");
 const hairTranspalent = require("./routes/hair-transpalent");
+const imageUploading = require("./routes/image");
 
 // init application
 const app = express();
@@ -51,7 +53,11 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// set static folder
+app.use(express.static(path.join(__dirname, "/public")));
+
 //mount routes
+app.use("/api/upload", imageUploading);
 app.use("/api/accomodation", accomodation);
 app.use("/api/liposuction", liposuction);
 app.use("/api/hair-transplant", hairTranspalent);
