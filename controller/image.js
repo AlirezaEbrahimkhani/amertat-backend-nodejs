@@ -1,8 +1,9 @@
 const asyncHandler = require("../middlewares/async");
 const Logger = require("../utils/logger");
+const ImageConvertor = require("../utils/image-convertor");
 const client = require("../config/db");
-const path = require("path");
-const fs = require("fs");
+
+const imageConvertor = new ImageConvertor();
 
 // @desc        Get image and Store
 // @route       GET /api/upload
@@ -14,18 +15,7 @@ exports.getImage = asyncHandler(async (req, res, next) => {
     (err, result) => {
       if (!err) {
         const { id, image, img_name } = result.rows[0];
-        var buffer = Buffer.from(image, "base64");
-        const name = `${id}_${img_name}`;
-        fs.writeFile(
-          path.join(
-            `${path.dirname(require.main.filename)}/public/download`,
-            name
-          ),
-          buffer,
-          (err) => {
-            new Logger("Error while selecting an Image ... !");
-          }
-        );
+        const name = imageConvertor.imageConvertor(id, image, img_name);
         res.status(200).json({ success: true, url: `/download/${name}` });
         new Logger("Select an Image ... !");
       } else {
@@ -45,7 +35,13 @@ exports.insertImage = asyncHandler(async (req, res, next) => {
     [data, name],
     (err, result) => {
       if (!err) {
-        res.status(201).json({ success: true, data: [] });
+        client.query(
+          "select id from tbl_images where img_name = $1",
+          [name],
+          (err, data) => {
+            res.status(201).json({ success: true, data: data.rows });
+          }
+        );
         new Logger("Insert new Image ... !");
       } else {
         new Logger("Error while inserting new image ... !");
