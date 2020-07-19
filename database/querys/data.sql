@@ -45,3 +45,22 @@ values
         'Hair transplants are done to add more hair to an area on your head that may be thinning or balding. It’s done by taking hair from thicker parts of the scalp, or other parts of the body, and grafting it to the thinning or balding section of the scalp.Over time, surgeons began using mini- and micro-grafts to minimize the appearance of transplanted hair on the scalp.',
         'Hair transplant is another restoration method. The first transplant was performed in 1939 in Japan with single scalp hairs. In the following decades, physicians developed the “plug” technique. This involves transplanting large tufts of hair.Hair transplants don’t work for everyone. They’re mainly used to restore hair if you’re balding or thinning naturally or have lost hair due to an injury.Simply put, a hair transplant takes hair you have and transfers it to an area where you don’t have hair. It’s typically taken from the back of your head, but can also be taken from other parts of your body.Before starting a transplant, your surgeon sterilizes the area where the hair will be removed and numbs it with a local anesthetic. You can also request sedation in order to stay asleep for the procedure.'
     );
+
+insert into
+    tbl_populardestination (title, description, writer, image_id)
+values
+(
+        'Card Azadi Tower',
+        'The Azadi Tower, formerly known as the Shahyad Tower, is a monument located on Azadi Square in Tehran, Iran. It is one of the landmarks of Tehran, marking the west entrance to the city, and is part of the Azadi Cultural Complex, which also includes an underground museum',
+        'Alireza Ebrahimkhani',
+        2
+    )
+insert into
+    tbl_populardestination (title, description, writer, image_id)
+values
+(
+        'Card Chehel Sotoun',
+        'Chehel Sotoun is a Persian pavilion in the middle of a park at the far end of a long pool, in Isfahan, Iran, built by Shah Abbas II to be used for his entertainment and receptions',
+        'Masoud Sadeghi',
+        3
+    );

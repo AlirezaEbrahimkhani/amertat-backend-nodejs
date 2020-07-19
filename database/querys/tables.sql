@@ -27,6 +27,16 @@ create table tbl_hairTransplant (
 create table tbl_images (
     id serial not null,
     image bytea not null,
-    img_name varchar(255) not null,
+    img_name varchar(255) not null unique,
     primary key (id)
+);
+
+create table tbl_popularDestination (
+    id serial not null,
+    title varchar(100) not null,
+    description text not null,
+    writer varchar(100) not null,
+    image_id int not null,
+    PRIMARY KEY(id),
+    FOREIGN KEY (image_id) REFERENCES tbl_images (id)
 );
