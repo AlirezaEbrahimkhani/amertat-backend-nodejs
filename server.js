@@ -11,6 +11,7 @@ require("./config/db");
 const accomodation = require("./routes/accomodation-service");
 const liposuction = require("./routes/liposuction");
 const hairTranspalent = require("./routes/hair-transpalent");
+const imageUploading = require("./routes/image");
 
 // init application
 const app = express();
@@ -52,6 +53,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 //mount routes
+app.use("/api/upload", imageUploading);
 app.use("/api/accomodation", accomodation);
 app.use("/api/liposuction", liposuction);
 app.use("/api/hair-transplant", hairTranspalent);
