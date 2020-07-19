@@ -23,3 +23,10 @@ create table tbl_hairTransplant (
     active boolean not null,
     primary key (id)
 );
+
+create table tbl_images (
+    id serial not null,
+    image bytea not null,
+    img_name varchar(255) not null,
+    primary key (id)
+);
