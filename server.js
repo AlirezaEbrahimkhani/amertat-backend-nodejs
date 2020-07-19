@@ -13,6 +13,7 @@ const accomodation = require("./routes/accomodation-service");
 const liposuction = require("./routes/liposuction");
 const hairTranspalent = require("./routes/hair-transpalent");
 const imageUploading = require("./routes/image");
+const popularDestination = require("./routes/popular-destination");
 
 // init application
 const app = express();
@@ -61,6 +62,7 @@ app.use("/api/upload", imageUploading);
 app.use("/api/accomodation", accomodation);
 app.use("/api/liposuction", liposuction);
 app.use("/api/hair-transplant", hairTranspalent);
+app.use("/api/popular-destination", popularDestination);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
