@@ -49,3 +49,22 @@ exports.insertImage = asyncHandler(async (req, res, next) => {
     }
   );
 });
+
+// @desc        update new image
+// @route       PUT /api/upload/:id
+// @access      Private
+exports.updateImage = asyncHandler(async (req, res, next) => {
+  const { name, data } = req.files.file;
+  await client.query(
+    "update tbl_images set image = $1 , img_name = $2 where id = $3",
+    [data, name, req.params.id],
+    (err, result) => {
+      if (!err) {
+        res.status(200).json({ success: true, data: [] });
+        new Logger("Update a Image ... !");
+      } else {
+        new Logger("Error while updating a image ... !");
+      }
+    }
+  );
+});

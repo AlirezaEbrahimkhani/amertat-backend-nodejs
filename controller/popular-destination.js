@@ -34,7 +34,7 @@ exports.getPopularDestinations = asyncHandler(async (req, res, next) => {
           };
           data.push(responseData);
         }
-        res.status(200).json({ success: true, data: data });
+        res.status(200).json({ success: true, count: data.length, data: data });
         new Logger("Select All Popular destinations ... !");
       } else {
         new Logger("Error while selecting All Popular destinations ... !");
