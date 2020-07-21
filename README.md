@@ -3,7 +3,6 @@
     <img src="https://raw.githubusercontent.com/caiogondim/javascript-environments-logos/master/node.js/standard/454x128.png">
 </p>
 
----
 ## Requirements
 
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
