@@ -47,3 +47,13 @@ create table tbl_tourismServie (
     active boolean not null,
     primary key (id)
 );
+
+create table tbl_home(
+    id serial not null unique,
+    introduction text not null,
+    about text not null,
+    whyIran text not null,
+    whyAmertat text not null,
+    active boolean not null,
+    primary key(id)
+);

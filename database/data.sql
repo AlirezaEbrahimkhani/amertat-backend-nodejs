@@ -80,3 +80,20 @@ values
         'According to the World Tourism Organization, international tourist arrivals reached 1.23 billion in 2016, up strongly from 674 million in 2000. Earnings reached a record US$ 1.22 trillion, increasing impressively from US$ 495 billion in 2000. Receipts from international passenger transport (i.e. visitor exports) were estimated at US$ 216 billion in 2016, bringing total international tourism receipts to US$ 1.4 trillion, corresponding to almost US$ 4 billion per day',
         true
     );
+
+insert into
+    tbl_home (
+        introduction,
+        about,
+        whyiran,
+        whyamertat,
+        active
+    )
+values
+    (
+        'MedicalTourism.com is a free, confidential, independent resource for patients and industry providers. Our mission is to provide a central portal where patients, Medical Tourism providers, hospitals, clinics, employers, and insurance companies can all find the information they need. Our site focuses on patients looking for specific knowledge in the fields of medical tourism, dental tourism, and health tourism.',
+        'The Amertat Medical Tourism is a Global Non-profit association for the Medical Tourism and International Patient Industry. The MTA works with healthcare providers, governments, insurance companies, employers and other buyers of healthcare - in their medical tourism, international patient, and healthcare initiatives - with a focus on providing the highest quality transparent healthcare.',
+        'It would be more realistic in the contemporary situation to focus the promotions on the border countries, and design the policy, and implementation in accordance with their cultural and social preferences. Activities in both levels of governmental and micro-level planning are demanded, under the cover of a comprehensive monitoring system. This review will benefit researchers exploring the updated evaluation of Iran’s medical tourism; also, it provides helpful insights to authorities in both governmental and private sector.',
+        'Our services are planned and scheduled in advance. We adhere strongly to the medical ethics and standards and use our international knowledge in the field of medical tourism in Iran to deliver cost-effective, timely, safe and quality services. In fact, we cater to all the nuances of medical tourism and guide you through every step.We try to understand your expectations and give the best services for your medical travel to Iran. We examine your medical condition comprehensively and suggest a customized mix of hospitals, clinics, and top surgeons. All AriaMedTour medical treatments’ costs are 40 to 200 percent cheaper than those in other countries.',
+        true
+    )
