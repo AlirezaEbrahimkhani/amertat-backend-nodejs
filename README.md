@@ -1,6 +1,7 @@
 # amertat-backend-nodejs
-
-A nice project with a nice description
+<p align="center">
+    <img src="https://raw.githubusercontent.com/caiogondim/javascript-environments-logos/master/node.js/standard/454x128.png">
+</p>
 
 ---
 ## Requirements
