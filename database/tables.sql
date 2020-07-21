@@ -57,3 +57,12 @@ create table tbl_home(
     active boolean not null,
     primary key(id)
 );
+
+create table tbl_popularProcedure (
+    id serial not null,
+    description text not null,
+    link text not null,
+    image_id int not null,
+    PRIMARY KEY(id),
+    FOREIGN KEY (image_id) REFERENCES tbl_images (id)
+);
