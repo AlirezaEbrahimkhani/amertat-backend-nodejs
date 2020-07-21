@@ -49,7 +49,7 @@ values
 insert into
     tbl_populardestination (title, description, writer, image_id)
 values
-(
+    (
         'Card Azadi Tower',
         'The Azadi Tower, formerly known as the Shahyad Tower, is a monument located on Azadi Square in Tehran, Iran. It is one of the landmarks of Tehran, marking the west entrance to the city, and is part of the Azadi Cultural Complex, which also includes an underground museum',
         'Alireza Ebrahimkhani',
@@ -58,9 +58,25 @@ values
 insert into
     tbl_populardestination (title, description, writer, image_id)
 values
-(
+    (
         'Card Chehel Sotoun',
         'Chehel Sotoun is a Persian pavilion in the middle of a park at the far end of a long pool, in Isfahan, Iran, built by Shah Abbas II to be used for his entertainment and receptions',
         'Masoud Sadeghi',
         3
+    );
+
+insert into
+    tbl_tourismservie (explanation, active)
+values
+    (
+        'Tourism and travel-related services includes services provided by hotels and restaurants (including catering), travel agencies and tour operator services, tourist guide services and other related services.Nearly all WTO members emphasize the importance of tourism, especially in terms of its contribution to employment and generating foreign exchange. Typically one of the most dynamic economic sectors, tourism-related services are labour-intensive, with numerous links to other major segments of the economy.One of the most crucial aspects of international tourism is the cross-border movement of consumers. This permits even unskilled workers in remote areas to become services exporters — for instance, by selling craft items, performing in cultural shows, or working in a tourism lodge.One of the most crucial aspects of international tourism is the cross-border movement of consumers.',
+        true
+    );
+
+insert into
+    tbl_tourismservie (explanation, active)
+values
+    (
+        'According to the World Tourism Organization, international tourist arrivals reached 1.23 billion in 2016, up strongly from 674 million in 2000. Earnings reached a record US$ 1.22 trillion, increasing impressively from US$ 495 billion in 2000. Receipts from international passenger transport (i.e. visitor exports) were estimated at US$ 216 billion in 2016, bringing total international tourism receipts to US$ 1.4 trillion, corresponding to almost US$ 4 billion per day',
+        true
     );
