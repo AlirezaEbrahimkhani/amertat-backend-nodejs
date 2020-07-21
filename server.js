@@ -16,6 +16,7 @@ const imageUploading = require("./routes/image");
 const popularDestination = require("./routes/popular-destination");
 const tourismService = require("./routes/tourism-service");
 const home = require("./routes/home");
+const popularProcedure = require("./routes/popular-procedure");
 
 // init application
 const app = express();
@@ -67,6 +68,7 @@ app.use("/api/hair-transplant", hairTranspalent);
 app.use("/api/popular-destination", popularDestination);
 app.use("/api/tourism-service", tourismService);
 app.use("/api/home", home);
+app.use("/api/popular-procedure", popularProcedure);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
