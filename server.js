@@ -14,14 +14,16 @@ const liposuction = require("./routes/liposuction");
 const hairTranspalent = require("./routes/hair-transpalent");
 const imageUploading = require("./routes/image");
 const popularDestination = require("./routes/popular-destination");
+const tourismService = require("./routes/tourism-service");
+const home = require("./routes/home");
 
 // init application
 const app = express();
 
 // fix access to back-end
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.setHeader("Access-Control-Allow-Origin", process.env.FRONTEND_APP_HOST);
 
   // Request methods you wish to allow
   res.setHeader(
@@ -63,6 +65,8 @@ app.use("/api/accomodation", accomodation);
 app.use("/api/liposuction", liposuction);
 app.use("/api/hair-transplant", hairTranspalent);
 app.use("/api/popular-destination", popularDestination);
+app.use("/api/tourism-service", tourismService);
+app.use("/api/home", home);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
