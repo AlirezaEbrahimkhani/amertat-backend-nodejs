@@ -107,3 +107,13 @@ values
     ('bad', 2),
     ('very bad', 1),
     ('awful', 0);
+
+insert into
+    tbl_method (method_name)
+values
+    ('WhatsApp'),
+    ('Telegram'),
+    ('FaceBook'),
+    ('Email'),
+    ('Phone'),
+    ('Imo');
