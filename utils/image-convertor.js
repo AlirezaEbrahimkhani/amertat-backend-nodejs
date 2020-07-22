@@ -10,7 +10,9 @@ class ImageConverter {
       path.join(`${path.dirname(require.main.filename)}/public/download`, name),
       buffer,
       (err) => {
-        new Logger("Error while selecting an Image ... !");
+        if (err) {
+          new Logger("Error while selecting an Image ... !");
+        }
       }
     );
     return name;
