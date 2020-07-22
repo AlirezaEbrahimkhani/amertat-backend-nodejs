@@ -66,3 +66,42 @@ create table tbl_popularProcedure (
     PRIMARY KEY(id),
     FOREIGN KEY (image_id) REFERENCES tbl_images (id)
 );
+
+create table tbl_feedback (
+    id serial not null,
+    feedback_name varchar(50) not null,
+    feedback_value int not null,
+    primary key(id)
+);
+
+create table tbl_method (
+    id serial not null,
+    method_name varchar(50) not null,
+    primary key(id)
+);
+
+create table tbl_contactUs (
+    id serial not null,
+    first_name varchar(50) not null,
+    last_name varchar(70) not null,
+    phone_number bigint not null,
+    subject varchar(30),
+    email varchar(50) not null,
+    address varchar(255) not null,
+    feedback_id int not null,
+    primary key (id),
+    FOREIGN KEY (feedback_id) REFERENCES tbl_feedback (id)
+);
+
+create table tbl_getFreeQoute (
+    id serial not null,
+    first_name varchar(50) not null,
+    last_name varchar(70) not null,
+    phone_number bigint not null,
+    subject varchar(30),
+    address varchar(255) not null,
+    message text not null,
+    method_id int not null,
+    primary key (id),
+    FOREIGN KEY (method_id) REFERENCES tbl_method (id)
+);
