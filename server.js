@@ -17,6 +17,9 @@ const popularDestination = require("./routes/popular-destination");
 const tourismService = require("./routes/tourism-service");
 const home = require("./routes/home");
 const popularProcedure = require("./routes/popular-procedure");
+const feedbacks = require("./routes/feedback");
+const contactUs = require("./routes/contact-us");
+const freeQoute = require("./routes/free-qoute");
 
 // init application
 const app = express();
@@ -69,6 +72,9 @@ app.use("/api/popular-destination", popularDestination);
 app.use("/api/tourism-service", tourismService);
 app.use("/api/home", home);
 app.use("/api/popular-procedure", popularProcedure);
+app.use("/api/feedbacks", feedbacks);
+app.use("/api/contact-us", contactUs);
+app.use("/api/qoute", freeQoute);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;
