@@ -105,3 +105,22 @@ create table tbl_getFreeQoute (
     primary key (id),
     FOREIGN KEY (method_id) REFERENCES tbl_method (id)
 );
+
+create table tbl_team (
+    id serial not null,
+    name varchar(100) not null,
+    position varchar(30) not null,
+    description varchar(255) not null,
+    image_id int not null,
+    primary key(id),
+    foreign key (image_id) references tbl_images (id)
+);
+
+create table tbl_developers (
+    id serial not null,
+    name varchar(100) not null,
+    position varchar(30) not null,
+    image_id int not null,
+    primary key(id),
+    foreign key (image_id) references tbl_images (id)
+);
