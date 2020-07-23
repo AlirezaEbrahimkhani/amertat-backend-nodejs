@@ -21,6 +21,8 @@ const feedbacks = require("./routes/feedback");
 const methods = require("./routes/method");
 const contactUs = require("./routes/contact-us");
 const freeQoute = require("./routes/free-qoute");
+const teams = require("./routes/team");
+const developers = require("./routes/developers");
 
 // init application
 const app = express();
@@ -77,6 +79,8 @@ app.use("/api/feedbacks", feedbacks);
 app.use("/api/methods", methods);
 app.use("/api/contact-us", contactUs);
 app.use("/api/qoute", freeQoute);
+app.use("/api/team", teams);
+app.use("/api/developers", developers);
 
 // start server Configuration
 const PORT = process.env.PORT || 5000;

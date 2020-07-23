@@ -117,3 +117,55 @@ values
     ('Email'),
     ('Phone'),
     ('Imo');
+
+insert into
+    tbl_team (name, position, description, image_id)
+values
+    (
+        'Susan Williams',
+        'Accounting Desk Person',
+        'An accounting clerk is a member of a company’s accounting department, responsible for assisting with both clerical and administrative tasks',
+        15
+    ),
+    (
+        'John doe',
+        'Lead Writer',
+        'A head writer is a person who oversees the team of writers on a television or radio series. The title is common in the soap opera genre, as well as with sketch comedies and talk shows that feature monologues and comedy skits.',
+        16
+    ),
+    (
+        'Kate Hliznitsova',
+        'Secretary',
+        'A secretary, administrative professional, or personal assistant is a person whose work consists of supporting management, including executives, using a variety of project management, communication, or organizational skills',
+        17
+    ),
+    (
+        'Simon Deniro',
+        'Department manager',
+        'Department managers are responsible for all the functions of a sales department. They oversee the staff and implement strategies to increase productivity. These managers also conduct training and seminars to motivate and build the skills of their team members',
+        18
+    );
+
+insert into
+    tbl_developers (name, position, image_id)
+values
+    (
+        'Alireza Ebrahimkhani',
+        'Project Manager',
+        19
+    ),
+    (
+        'Josef seed',
+        'Web Developer (Front-end)',
+        20
+    ),
+    (
+        'John Doe',
+        'Web Developer (Front-end)',
+        21
+    ),
+    (
+        'Steve Smith',
+        'Web Developer (Back-end)',
+        22
+    );

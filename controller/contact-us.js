@@ -1,6 +1,6 @@
 const asyncHandler = require("../middlewares/async");
 const Logger = require("../utils/logger");
-const Mailer = require("../middlewares/mailer");
+const Mailer = require("../utils/mailer");
 const client = require("../config/db");
 
 const mailer = new Mailer();
