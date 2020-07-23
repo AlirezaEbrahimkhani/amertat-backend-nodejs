@@ -124,3 +124,13 @@ create table tbl_developers (
     primary key(id),
     foreign key (image_id) references tbl_images (id)
 );
+
+create table tbl_blog(
+    id serial not null,
+    title varchar(255) not null,
+    description text not null,
+    link text not null,
+    image_id int not null,
+    PRIMARY key (id),
+    foreign key (image_id) references tbl_images (id)
+);

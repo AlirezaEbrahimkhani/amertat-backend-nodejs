@@ -169,3 +169,61 @@ values
         'Web Developer (Back-end)',
         22
     );
+
+insert into
+    tbl_blog (title, description, link, image_id)
+values
+    (
+        'How to respond to tantrums ?',
+        'Children’s tantrums always seem to happen at the worst possible times. Take a breath and try this 3-point strategy for calming everyone down.',
+        'https://www.health.harvard.edu/blog/how-to-respond-to-tantrums-2020051919845',
+        6
+    ),
+    (
+        'IBD.What should I eat?',
+        'For people with inflammatory bowel disease (IBD), knowing which foods to eat and which to avoid is important information. An international organization has developed guidelines for some kinds of food, with the aim of helping people with this condition reduce symptoms and inflammation',
+        'https://www.health.harvard.edu/blog/and-now-for-some-good-news-on-health-2020051519805',
+        7
+    ),
+    (
+        'Do adults really need tetanus booster shots?',
+        'Can childhood tetanus vaccinations offer sufficient protection during adulthood without regular booster shots? Although a new study posits this, the CDC continues to recommend booster shots every 10 years.',
+        'https://www.health.harvard.edu/blog/do-adults-really-need-tetanus-booster-shots-2020051219786',
+        8
+    ),
+    (
+        'All rise now — just how fit are you?',
+        'Attempting to stand up from a seated position on the floor is a good way to assess your overall fitness. No problem? Do it regularly to track your physical health. Having difficulty? Try these exercises to help you improve your fitness.',
+        'https://www.health.harvard.edu/blog/all-rise-now-just-how-fit-are-you-2020050619770',
+        9
+    ),
+    (
+        'Think your baby is allergic to cow’s milk?',
+        'Babies who show certain digestive symptoms may be incorrectly diagnosed with cow’s milk allergy and put on special diets, although this allergy is uncommon.',
+        'https://www.health.harvard.edu/blog/think-your-baby-is-allergic-to-cows-milk-2020050519739',
+        10
+    ),
+    (
+        'Are sugar substitutes too sweet to be true?',
+        'Many people wonder if sugar substitutes are worth choosing, or are even safe. There may have a slight benefit for some, but there is also the potential for increased risk of diabetes.',
+        'https://www.health.harvard.edu/blog/are-sugar-substitutes-too-sweet-to-be-true-2020050419692',
+        11
+    ),
+    (
+        'Is it time to give up your annual mammogram?',
+        'The question of what age a woman can stop having mammograms does not have a definite answer, but is one each woman must answer based on her circumstances and her feelings about the risks of the procedure versus its benefits.',
+        'https://www.health.harvard.edu/blog/is-it-time-to-give-up-your-annual-mammogram-2020050119682',
+        12
+    ),
+    (
+        'More sexual partners, more cancer?',
+        'A study of older adults found that those who had had more sexual partners were more likely to have developed cancer, but that does not mean there is a causal connection, and there are many ways that sexual behavior can affect cancer risk.',
+        'https://www.health.harvard.edu/blog/more-sexual-partners-more-cancer-2020042819658',
+        13
+    ),
+    (
+        'No spleen? What you need to know to stay healthy',
+        'You don’t need your spleen to live a normal, healthy life, but the spleen does play an important role in defending the body against infection, so those without it need to take certain precautions to ensure they remain healthy.',
+        'https://www.health.harvard.edu/blog/no-spleen-what-you-need-to-know-to-stay-healthy-2020042419641',
+        14
+    );
