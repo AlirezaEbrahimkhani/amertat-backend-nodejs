@@ -9,13 +9,15 @@ const {
   updateHairTransplant,
 } = require("../controller/hair-transpalent");
 
-Router.route("/").get(getHairTransplants).post(createHairTransplant);
+const { protect } = require("../middlewares/auth");
+
+Router.route("/").get(getHairTransplants).post(protect, createHairTransplant);
 
 Router.route("/active").get(getActiveHairTransplant);
 
 Router.route("/:id")
   .get(getHairTransplant)
-  .put(updateHairTransplant)
-  .delete(deleteHairTransplant);
+  .put(protect, updateHairTransplant)
+  .delete(protect, deleteHairTransplant);
 
 module.exports = Router;

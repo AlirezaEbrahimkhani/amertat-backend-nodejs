@@ -9,10 +9,16 @@ const {
   deleteHome,
 } = require("../controller/home");
 
-router.route("/").get(getHomes).post(createHome);
+const { protect } = require("../middlewares/auth");
+
+router.route("/").get(getHomes).post(protect, createHome);
 
 router.route("/active").get(getActiveHome);
 
-router.route("/:id").get(getHome).put(updateHome).delete(deleteHome);
+router
+  .route("/:id")
+  .get(getHome)
+  .put(protect, updateHome)
+  .delete(protect, deleteHome);
 
 module.exports = router;

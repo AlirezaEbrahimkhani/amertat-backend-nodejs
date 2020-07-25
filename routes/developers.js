@@ -8,12 +8,14 @@ const {
   deleteDeveloper,
 } = require("../controller/developers");
 
-router.route("/").get(getDevelopers).post(createDeveloper);
+const { protect } = require("../middlewares/auth");
+
+router.route("/").get(getDevelopers).post(protect, createDeveloper);
 
 router
   .route("/:id")
   .get(getDeveloper)
-  .put(updateDeveloper)
-  .delete(deleteDeveloper);
+  .put(protect, updateDeveloper)
+  .delete(protect, deleteDeveloper);
 
 module.exports = router;
