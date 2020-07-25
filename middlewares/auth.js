@@ -8,10 +8,15 @@ exports.protect = asyncHandler(async (req, res, next) => {
     req.headers.authorization.startsWith("Bearer")
   ) {
     token = req.headers.authorization.split(" ")[1];
+  } else {
+    return res.status(401).json({
+      success: false,
+      message: "Not authorize to access to this route ... !",
+    });
   }
 
   if (!token) {
-    res.status(401).json({
+    return res.status(401).json({
       success: false,
       message: "Not authorize to access to this route ... !",
     });
