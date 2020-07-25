@@ -134,3 +134,20 @@ create table tbl_blog(
     PRIMARY key (id),
     foreign key (image_id) references tbl_images (id)
 );
+
+create table tbl_roles(
+    id serial not null,
+    role_name varchar(100) not null,
+    primary key(id)
+);
+
+create table tbl_users(
+    id serial not null,
+    first_name varchar(60) not null,
+    last_name varchar(100) not null,
+    user_name varchar(50) not null UNIQUE,
+    password varchar(50) not null,
+    role_id int not null,
+    PRIMARY KEY (id),
+    FOREIGN key (role_id) REFERENCES tbl_roles (id)
+);

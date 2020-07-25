@@ -8,8 +8,14 @@ const {
   deleteBlog,
 } = require("../controller/blog");
 
-router.route("/").get(getBlogs).post(createBlog);
+const { protect } = require("../middlewares/auth");
 
-router.route("/:id").put(updateBlog).get(getBlog).delete(deleteBlog);
+router.route("/").get(getBlogs).post(protect, createBlog);
+
+router
+  .route("/:id")
+  .put(protect, updateBlog)
+  .get(getBlog)
+  .delete(protect, deleteBlog);
 
 module.exports = router;

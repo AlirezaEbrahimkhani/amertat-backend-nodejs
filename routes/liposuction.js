@@ -9,13 +9,15 @@ const {
   updateLiposuction,
 } = require("../controller/liposuction");
 
-Router.route("/").get(getLiposuctions).post(createLiposuction);
+const { protect } = require("../middlewares/auth");
+
+Router.route("/").get(getLiposuctions).post(protect, createLiposuction);
 
 Router.route("/active").get(getActiveLiposuction);
 
 Router.route("/:id")
   .get(getLiposuction)
-  .put(updateLiposuction)
-  .delete(deleteLiposuction);
+  .put(protect, updateLiposuction)
+  .delete(protect, deleteLiposuction);
 
 module.exports = Router;

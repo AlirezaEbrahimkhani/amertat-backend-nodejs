@@ -9,14 +9,16 @@ const {
   createTourismService,
 } = require("../controller/tourism-service");
 
-router.route("/").get(getTourismServices).post(createTourismService);
+const { protect } = require("../middlewares/auth");
+
+router.route("/").get(getTourismServices).post(protect, createTourismService);
 
 router.route("/active").get(getActiveTourismService);
 
 router
   .route("/:id")
   .get(getTourismService)
-  .put(updateTourismService)
-  .delete(deleteTourismService);
+  .put(protect, updateTourismService)
+  .delete(protect, deleteTourismService);
 
 module.exports = router;

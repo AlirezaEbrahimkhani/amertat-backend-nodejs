@@ -8,12 +8,17 @@ const {
   deletePopularProcedure,
 } = require("../controller/popular-procedure");
 
-router.route("/").get(getPopularProcedures).post(createPopularProcedure);
+const { protect } = require("../middlewares/auth");
+
+router
+  .route("/")
+  .get(getPopularProcedures)
+  .post(protect, createPopularProcedure);
 
 router
   .route("/:id")
   .get(getPopularProcedure)
-  .put(updatePopularProcedure)
-  .delete(deletePopularProcedure);
+  .put(protect, updatePopularProcedure)
+  .delete(protect, deletePopularProcedure);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { protect } = require("../middlewares/auth");
 const {
   getAccomodations,
   getAccomodation,
@@ -11,12 +12,12 @@ const {
 
 router.route("/active").get(getActiveAccomodation);
 
-router.route("/").get(getAccomodations).post(createAccomodation);
+router.route("/").get(getAccomodations).post(protect, createAccomodation);
 
 router
   .route("/:id")
   .get(getAccomodation)
-  .put(updateAccomodation)
-  .delete(deleteAccomodation);
+  .put(protect, updateAccomodation)
+  .delete(protect, deleteAccomodation);
 
 module.exports = router;

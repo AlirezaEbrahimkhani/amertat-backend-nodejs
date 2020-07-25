@@ -8,12 +8,17 @@ const {
   deletePopularDestination,
 } = require("../controller/popular-destination");
 
+const { protect } = require("../middlewares/auth");
+
 router
   .route("/:id")
   .get(getPopularDestination)
-  .put(updatePopularDestination)
-  .delete(deletePopularDestination);
+  .put(protect, updatePopularDestination)
+  .delete(protect, deletePopularDestination);
 
-router.route("/").get(getPopularDestinations).post(createPopularDestination);
+router
+  .route("/")
+  .get(getPopularDestinations)
+  .post(protect, createPopularDestination);
 
 module.exports = router;

@@ -8,8 +8,14 @@ const {
   deleteTeam,
 } = require("../controller/team");
 
-router.route("/").get(getTeams).post(createTeam);
+const { protect } = require("../middlewares/auth");
 
-router.route("/:id").get(getTeam).put(updateTeam).delete(deleteTeam);
+router.route("/").get(getTeams).post(protect, createTeam);
+
+router
+  .route("/:id")
+  .get(getTeam)
+  .put(protect, updateTeam)
+  .delete(protect, deleteTeam);
 
 module.exports = router;

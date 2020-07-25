@@ -227,3 +227,9 @@ values
         'https://www.health.harvard.edu/blog/no-spleen-what-you-need-to-know-to-stay-healthy-2020042419641',
         14
     );
+
+insert into
+    tbl_roles (role_name)
+values
+    ('Admin'),
+    ('Publisher');
